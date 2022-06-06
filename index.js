@@ -64,3 +64,17 @@ class List {
         return this;
     }
 };
+
+const createAndAppend = ( id, type, ap, text ) => {
+    const node = document.createElement(type);
+    const append = document.getElementById(ap);
+    if(append){
+        if( id !== "none" )node.id = id;
+        if( text ){
+            const textNode = document.createTextNode(text);
+            node.appendChild(textNode);
+        }
+        append.appendChild(node);
+        return document.getElementById(id);
+    }
+};
