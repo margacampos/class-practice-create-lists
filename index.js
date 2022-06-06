@@ -106,3 +106,31 @@ const setOptions = (list) => {
         option.setAttribute("value", i.title);
     });
 };
+
+const handleSubmit = (type) => {
+    console.log("submitting...");
+    const select = document.getElementById('listSelect');
+    const value = select.options[select.selectedIndex].value;
+    const text = document.getElementById('inputItem').value;
+    if(!text)return "error";
+    if(type === "add"){
+        lists.map((i)=>i.title===value && i.add(text));
+    }else{
+        lists.map((i)=>i.title===value && i.remove(text));
+    }
+};
+
+handleCreate = () => {
+    const id = document.getElementById("newList").value;
+    const title = document.getElementById("newListTitle").value;
+    const desc = document.getElementById("newListDesc").value;
+    if (doesExist(id))return;
+    if(titleExists(title))return;
+    const newList = new List( id,"container", [] );
+    if(title)newList.addTitle(title);
+    if(desc)newList.addDesc(desc);
+    newList.addList();
+    lists.push(newList);
+    setOptions(lists);
+};
+
