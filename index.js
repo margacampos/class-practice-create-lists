@@ -90,3 +90,6 @@ const removeFromList = (id) => {
     const list = document.getElementById(id);
     list.textContent = '';
 };
+
+const first = new List("todo", "container", ["Do my homework", "Study Biology", "Have lunch"]).addTitle("To do list").addDesc("This is a list to keep track of what you have to do today.").addList();
+const second = new List("food", "container", ["Apple", "Carrot", "Pasta"]).addTitle("Food List").addList();
