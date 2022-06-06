@@ -93,3 +93,16 @@ const removeFromList = (id) => {
 
 const first = new List("todo", "container", ["Do my homework", "Study Biology", "Have lunch"]).addTitle("To do list").addDesc("This is a list to keep track of what you have to do today.").addList();
 const second = new List("food", "container", ["Apple", "Carrot", "Pasta"]).addTitle("Food List").addList();
+
+let lists = [
+    first,
+    second
+];
+
+const setOptions = (list) => {
+    removeFromList("listSelect");
+    list.map((i,index) => {
+        const option = createAndAppend("selectItem" + index, "option", "listSelect", i.title);
+        option.setAttribute("value", i.title);
+    });
+};
