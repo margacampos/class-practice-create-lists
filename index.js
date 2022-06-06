@@ -85,3 +85,8 @@ const addToList = (list, elem) => {
     node.textContent = elem;
     append.appendChild(node);
 };
+
+const removeFromList = (id) => {
+    const list = document.getElementById(id);
+    list.textContent = '';
+};
