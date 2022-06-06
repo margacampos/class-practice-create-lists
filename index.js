@@ -134,3 +134,20 @@ handleCreate = () => {
     setOptions(lists);
 };
 
+const doesExist = (id) => {
+    const value = document.getElementById(id);
+    if(value)return true;
+    else return false;
+}
+
+const titleExists = (title) =>{
+    let exists = false;
+    lists.map((i)=> i.title === title ? exists=true : "");
+    return exists;
+}
+
+setOptions(lists);
+
+for (const list of lists) {
+    list.update();
+}
