@@ -78,3 +78,10 @@ const createAndAppend = ( id, type, ap, text ) => {
         return document.getElementById(id);
     }
 };
+
+const addToList = (list, elem) => {
+    const append = document.getElementById(list);
+    const node = document.createElement("li");
+    node.textContent = elem;
+    append.appendChild(node);
+};
